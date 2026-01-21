@@ -14,7 +14,7 @@ app.post("/help",async(req,res)=>{
       service: "gmail",
       auth: {
         user: process.env.Gmail,
-        pass: process.env.Passowrd
+        pass: process.env.Password
       }
   });
 
@@ -43,3 +43,4 @@ app.post("/help",async(req,res)=>{
 }})
 
 app.listen(process.env.PORT||5000,console.log("Server is Running at ",process.env.PORT))
+
