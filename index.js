@@ -13,16 +13,16 @@ app.post("/help",async(req,res)=>{
       const transport = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.Gmail,
-        pass: process.env.Password
+        user: process.env.GMAIL,
+        pass: process.env.PASSWORD
       }
   });
 
   try {
     // Email to company
      await transport.sendMail({
-      to: process.env.Gmail,
-      from: process.env.Gmail,
+      to: process.env.GMAIL,
+      from: process.env.GMAIL,
       subject: `A Request From InoByte`,
       text: `From: ${email}. Request: ${help}`
     });
@@ -30,7 +30,7 @@ app.post("/help",async(req,res)=>{
     // Email to user
     await transport.sendMail({
       to: email,
-      from: process.env.Gmail,
+      from: process.env.GMAIL,
       subject: `Hi ${email}! Your Request was Sent to InoByte`,
       text: `Please wait for our response. Thanks for your patience!`
     });
@@ -43,4 +43,5 @@ app.post("/help",async(req,res)=>{
 }})
 
 app.listen(process.env.PORT||5000,console.log("Server is Running at ",process.env.PORT))
+
 
