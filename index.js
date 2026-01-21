@@ -21,8 +21,8 @@ app.post("/help",async(req,res)=>{
   try {
     // Email to company
      await transport.sendMail({
-      to: process.env.GMAIL_USER,
-      from: process.env.GMAIL_USER,
+      to: process.env.Gmail,
+      from: process.env.Gmail,
       subject: `A Request From InoByte`,
       text: `From: ${email}. Request: ${help}`
     });
@@ -30,7 +30,7 @@ app.post("/help",async(req,res)=>{
     // Email to user
     await transport.sendMail({
       to: email,
-      from: process.env.GMAIL_USER,
+      from: process.env.Gmail,
       subject: `Hi ${email}! Your Request was Sent to InoByte`,
       text: `Please wait for our response. Thanks for your patience!`
     });
