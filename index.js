@@ -41,4 +41,5 @@ app.post("/help",async(req,res)=>{
     console.log(err);
     res.status(500).json({ error: "Error sending emails" });
 }})
-app.listen(process.env.Port||5000,console.log("Server is Running at ",process.env.Port))
+
+app.listen(process.env.PORT||5000,console.log("Server is Running at ",process.env.PORT))
